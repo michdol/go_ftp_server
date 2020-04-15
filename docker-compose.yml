@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  .:
+
+services:
+  go_slack:
+    build: .
+    working_dir: /root/go/src/ftpserver
+    volumes:
+      - ./src:/root/go/src/ftpserver
+    ports:
+      - "20:20"
+      - "21:21"
+      - "8000:8000"
+      - "2224:22"
